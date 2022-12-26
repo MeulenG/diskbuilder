@@ -440,6 +440,8 @@ namespace OSBuilder
                 scheme = new DiskLayouts.MBR();
             else if (config.Scheme.ToLower() == "gpt")
                 scheme = new DiskLayouts.GPT();
+            else if (config.Scheme.ToLower() == "singleton")
+                scheme = new DiskLayouts.Singleton();
             else {
                 throw new Exception($"{nameof(Program)} | {nameof(CreateDiskScheme)} | ERROR: Invalid schema specified in the model");
             }
